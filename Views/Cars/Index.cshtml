@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Cars.Models.Cars>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section css {
+    <!-- DATA TABLES -->
+    <link href="~/Scripts/DataTables-1.10.8/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+
+<h2>Index</h2>
+<form method="post" action="@Url.Action("Index")">
+    @Html.DropDownList("year")
+    <button type="submit">Update</button>
+</form>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="carsTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_trim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model_year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.engine_num_cyl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.transmission_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lkm_mixed)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.model_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.model_trim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.model_year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.engine_num_cyl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.transmission_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lkm_mixed)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <script src="~/Scripts/DataTables-1.10.8/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#carsTable').DataTable();
+        });
+</script>
+    }

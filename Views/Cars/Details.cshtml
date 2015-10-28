@@ -1,0 +1,73 @@
+﻿@model Cars.Models.CarsViewModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cars</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.model_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.model_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.model_trim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.model_trim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.model_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.model_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.engine_num_cyl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.engine_num_cyl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.transmission_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.transmission_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.lkm_mixed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.lkm_mixed)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
